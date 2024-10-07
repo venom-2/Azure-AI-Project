@@ -11,8 +11,16 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
 app.use(express.json());
+// CORS configuration
+app.use(cors({
+  origin: 'https://azure-ai-project-frontend.vercel.app',  // Your frontend URL
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
+// Preflight request handler
+app.options('*', cors());
 
 // Register routes
 app.use('/api', visionRoutes);
