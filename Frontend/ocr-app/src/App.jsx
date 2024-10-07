@@ -30,14 +30,14 @@ function App() {
         let formData = new FormData();
         formData.append('image', file);
 
-        response = await axios.post('http://localhost:5000/api/recognize-text', formData, {
+        response = await axios.post('https://azure-ai-project.vercel.app/api/recognize-text', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
       } else if (imageUrl) {
         // Handle image URL
-        response = await axios.post('http://localhost:5000/api/recognize-text', {
+        response = await axios.post('https://azure-ai-project.vercel.app/api/recognize-text', {
           imageUrl: imageUrl,
         });
       } else {
