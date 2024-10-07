@@ -86,7 +86,14 @@ function App() {
       {recognizedText && (
         <div className="text mt-4">
           <h3>Recognized Text:</h3>
-          <p>{recognizedText}</p>
+          {/* <p>{recognizedText}</p> */}
+          <textarea
+            readOnly
+            value={recognizedText}
+            rows="10"
+            cols="10"
+            className="form-control"
+          ></textarea>
         </div>
       )}
     </div>
