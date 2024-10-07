@@ -62,7 +62,7 @@ function App() {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label className='label'>Upload Image or Enter Image URL</label>
+          <label className='label'>Enter Image URL</label>
           <input
             type="text"
             className="form-control mb-3"
