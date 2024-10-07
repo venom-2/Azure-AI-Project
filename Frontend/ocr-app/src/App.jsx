@@ -13,9 +13,9 @@ function App() {
     setImageUrl(e.target.value);
   };
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+  // const handleFileChange = (e) => {
+  //   setFile(e.target.files[0]);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,14 +30,14 @@ function App() {
         let formData = new FormData();
         formData.append('image', file);
 
-        response = await axios.post('https://azure-ai-project.vercel.app/api/recognize-text', formData, {
+        response = await axios.post('http://localhost:5000/api/recognize-text', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
       } else if (imageUrl) {
         // Handle image URL
-        response = await axios.post('https://azure-ai-project.vercel.app/api/recognize-text', {
+        response = await axios.post('http://localhost:5000/api/recognize-text', {
           imageUrl: imageUrl,
         });
       } else {
@@ -51,6 +51,7 @@ function App() {
       console.error('Error recognizing text:', error);
     } finally {
       setLoading(false);
+      setImageUrl('');
     }
   };
 
@@ -70,11 +71,11 @@ function App() {
             value={imageUrl}
             onChange={handleUrlChange}
           />
-          <input
+          {/* <input
             type="file"
             className="form-control mb-3"
             onChange={handleFileChange}
-          />
+          /> */}
         </div>
         <div className='button'>
           <button type="submit" className="btn btn-primary" disabled={loading}>
