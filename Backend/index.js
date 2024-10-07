@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://azure-ai-project-frontend.vercel.app/',
+  origin: '*',
   methods: ['GET', 'POST'],
 }));
 app.use(express.json());
