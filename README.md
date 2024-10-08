@@ -97,3 +97,4 @@ The frontend will run at http://localhost:5173.
 - Click the "Recognize Text" button.
 - The recognized text will be displayed below the form once the request is processed.
 
+Keep Grinding 👍
